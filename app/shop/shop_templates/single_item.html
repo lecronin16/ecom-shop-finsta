@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Finsta Shop!</h3>
+    <div class="row">
+            <div class="card text-decoration-none text-dark" style="width: 18rem;">
+                <img src="{{ s.img_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Item {{ s.id }}</h5>
+                <p class="card-text">Name: {{ s.name }}</p>
+                <p class="card-text">Price: ${{ s.price }}</p>
+                <p class="card-text">Description: {{ s.description }}</p>
+                <a href="{{ url_for('shop.addToCart', item=s.item) }}" class="btn btn-secondary">Add to Cart</a>
+                </div>
+            </div>
+    </div>
+{% endblock %}
